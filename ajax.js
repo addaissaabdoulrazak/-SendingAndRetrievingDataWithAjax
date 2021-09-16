@@ -36,7 +36,7 @@ function process() {
     name = encodeURIComponent(document.getElementById("name").value);
 
     //ouverture de la connexion avec le serveur
-    //...Get/nom_ressource .. on envoi la valeur saisie dans le champs input via la methode GET tout en indiquant la ressource que nous voulons atteindre
+    //...Get/nom_ressource .. on recupère puis on envoi la valeur saisie dans le champs input via la methode GET tout en indiquant sur quelle fichier nous voulons effectuer notre requête Ajax la ressource en lui passant la valeur recuperer  qui est name
 
     xmlHttp.open("GET", "ex1.php?name=" + name, true);
 
