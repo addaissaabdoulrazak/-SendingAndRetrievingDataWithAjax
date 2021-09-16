@@ -1,7 +1,8 @@
 // creation de l'objet xmlhttprequest pour Dialoguer avec le serveur de maniere asynchrone
-
-//la function XmlHttpRequest() return un objet XmtHttpRequest lors de son appel
 var xmlHttp = CreateXmlHttpRequestObject();
+
+/********** Function de Creation de l'objet xmlHttpRequest Pour la communication asynchrone avec le serveur **********/
+
 function CreateXmlHttpRequestObject() {
   var xmlHttp;
 
@@ -23,6 +24,8 @@ function CreateXmlHttpRequestObject() {
     return xmlHttp;
   }
 }
+
+//*************phase de  creation de la requête*******************/
 
 function process() {
   /* Verication de l'etat du serveur si le serveur est prêt a communiquer*/
@@ -50,7 +53,8 @@ function process() {
   }
 }
 
-//** Function de Manipulation de la Reponse */
+//******* Function de Manipulation de la Reponse et de modification du contenue HTML *****************/
+
 function handleResponse() {
   //on verifier si le serveur a fini de traité la requette c'est a dire s'il a completement fini de transmetres les données par ce qu'il peut etre dans une phase intermedière
   if (xmlHttp.readyState == 4) {
