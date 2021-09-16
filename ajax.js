@@ -56,6 +56,7 @@ function handleResponse() {
   if (xmlHttp.readyState == 4) {
     //si tout c'est bien passé on verifier si notre requete est un succes ou pas?
     if (xmlHttp.status == 200) {
+      // responseXML = retourne un Document qui contient la réponse serveur ou null si la requête a échoué ;
       reponse = xmlHttp.responseXML;
       xmlRoot = reponse.documentElement;
       message = xmlRoot.firstChild.data;
