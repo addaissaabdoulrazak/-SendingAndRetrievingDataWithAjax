@@ -62,9 +62,14 @@ function handleResponse() {
     if (xmlHttp.status == 200) {
       // responseXML = retourne un Document qui contient la réponse serveur ou null si la requête a échoué ;
       reponse = xmlHttp.responseXML;
+
+      //on accède a la racine du Document Xml c'est a dire la première balise d'un Document Xml est appéler racine il s'agit de la balise <response> du fichier Php
       xmlRoot = reponse.documentElement;
+
+      //puis on accède au prémier element de la balise racine qui est le Contenue et ceci grace a la propriété data
       message = xmlRoot.firstChild.data;
 
+      //enfin  on injecte le contenue dans la page html
       document.getElementById("answer").innerHTML =
         '<span style="color: red">' + message + "</span>";
       setTimeout("process()", 1000);
